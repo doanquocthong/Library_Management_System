@@ -16,7 +16,7 @@ export async function POST(req) {
         password: '123456',
         name: 'Nguyễn Văn A',
         role: 'user',
-        avatar: '/images/avatar1.jpg',
+        avatar: '/images/meo.jpg',
       },
     ];
   

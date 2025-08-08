@@ -14,6 +14,13 @@ export function AuthProvider({ children }) {
     }
   }, []);
 
+  // Hàm cập nhật thông tin user
+  const updateUser = (updatedUserData) => {
+    const newUserData = { ...user, ...updatedUserData };
+    setUser(newUserData);
+    localStorage.setItem('user', JSON.stringify(newUserData));
+  };
+
   // Hàm logout
   const logout = () => {
     localStorage.removeItem('user');
@@ -21,7 +28,7 @@ export function AuthProvider({ children }) {
   };
 
   return (
-    <AuthContext.Provider value={{ user, setUser, logout }}>
+    <AuthContext.Provider value={{ user, setUser, updateUser, logout }}>
       {children}
     </AuthContext.Provider>
   );
